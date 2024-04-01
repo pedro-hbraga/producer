@@ -1,0 +1,29 @@
+
+api:
+  name: 'API: @project.name@'
+  description: '@project.description@'
+  version: '@project.version@'
+
+  queue:
+    message:
+      exchange: message.exchange
+      route: message.route
+      queue: message.queue
+
+server:
+  port: 8080
+  servlet:
+    context-path: /producer
+
+spring:
+  application:
+    name: producer
+  profiles:
+    active: local
+  rabbitmq:
+    virtualhost: /
+    host: dev-rabbit-ipa.infopriceti.com.br
+    port: 5672
+    username: infoprice
+    password: Pr1c31nf0@2020
+---
